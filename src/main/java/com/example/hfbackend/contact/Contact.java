@@ -29,4 +29,11 @@ public class Contact {
         this.address = address;
     }
 
+    public Contact updateFrom(Contact object, boolean partial){
+        if(!partial || object.phoneNumber!=null) {this.phoneNumber = object.phoneNumber;}
+        if(!partial || object.email!=null) {this.email = object.email;}
+        if(!partial || object.address!=null) {this.address = object.address;}
+        return this;
+    }
+
 }
